@@ -1,0 +1,55 @@
+type User {
+  id: Int
+  firstName: String
+  lastName: String
+  phoneNumber: String
+  gender: gender
+  email: String
+  password: String
+  profileImg: String
+  nickname: String
+  mbtiType: String
+  isVerificated: Boolean
+}
+
+type Query {
+  getUser(id: Int!): GetUserResponse!
+}
+
+type Mutation {
+  signUp(
+    firstName: String
+    lastName: String
+    phoneNumber: String
+    gender: gender
+    email: String
+    password: String
+    profileImg: String
+    nickname: String
+    mbtiType: String
+  ): SignUpResponse!
+  signIn(email: String, password: String): SignInResponse!
+}
+
+enum gender {
+  Man
+  Woman
+}
+
+type GetUserResponse {
+  ok: Boolean!
+  user: User
+  error: String
+}
+
+type SignUpResponse {
+  ok: Boolean!
+  token: String
+  error: String
+}
+
+type SignInResponse {
+  ok: Boolean!
+  token: String
+  error: String
+}

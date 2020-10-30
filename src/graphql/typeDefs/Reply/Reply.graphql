@@ -1,0 +1,25 @@
+type Reply {
+  text: String
+  user_id: Int
+  post_id: Int
+}
+
+type Query {
+  getReply(id: Int!): GetReplyResponse!
+}
+
+type Mutation {
+  createReply(text: String): CreateReplyResponse!
+}
+
+type GetReplyResponse {
+  ok: Boolean!
+  reply: Reply
+  error: String
+}
+
+type CreateReplyResponse {
+  ok: Boolean!
+  reply: Reply
+  error: String
+}

@@ -1,0 +1,35 @@
+type Post {
+  id: Int
+  boardType: String
+  title: String
+  content_img: String
+  content_text: String
+  like: Int
+  user_id: Int
+}
+
+type Query {
+  getPost(id: Int!): GetPostResponse!
+}
+
+type Mutation {
+  createPost(
+    boardType: String
+    title: String
+    content_img: String
+    content_text: String
+    like: Int
+  ): CreatePostResponse!
+}
+
+type GetPostResponse {
+  ok: Boolean!
+  post: Post
+  error: String
+}
+
+type CreatePostResponse {
+  ok: Boolean!
+  post: Post
+  error: String
+}
