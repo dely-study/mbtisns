@@ -1,40 +1,41 @@
 'use strict';
-const Man = "Man";
-const Woman = "Woman";
+const Man = 'Man';
+const Woman = 'Woman';
 
 module.exports = (sequelize, DataTypes) => {
   const user = sequelize.define('user', {
     firstName: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     lastName: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     phoneNumber: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     gender: {
-      type: DataTypes.ENUM([Man, Woman])
+      type: DataTypes.ENUM([Man, Woman]),
     },
     email: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     password: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     profileImg: {
-      type: DataTypes.JSON
+      type: DataTypes.JSON,
     },
     nickname: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     mbtiType: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     isVerificated: {
-      type: DataTypes.BOOLEAN
-    }
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
-  
+
   return user;
 };
